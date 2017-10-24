@@ -1,0 +1,65 @@
+<import src="../stars/stars_template.wxml" />
+
+<!--pages/movies/movie_detail/movie_detail.wxml-->
+<view calss="container">
+  <image class="head_img" src="{{movie.movieImg}}" mode="aspectFill" ></image>
+  <view class="head_img_hover"  data-src="{{movie.movieImg}}" catchtap="viewMoviePostImg">
+    <text class="main_title">{{movie.title}}</text>
+    <text class="sub_title">
+      {{movie.country+ '.' + movie.year}}
+    </text>
+    <view class="like">
+      <text class="highlight_font">
+        {{movie.wishCount}}
+      </text>
+      <text class="plain_font">
+        人喜欢
+      </text>
+      <text class="highlight_font">
+        {{movie.commentCount}}
+      </text>
+      <text class="plain_font">
+        条评论
+      </text>
+    </view>
+  </view>
+  <image class="movie_img" src="{{movie.movieImg}}" data-src="{{movie.movieImg}}" catchtap="viewMoviePostImg"></image>
+  <view class="summary">
+    <view class="original_title">
+      <text>{{movie.originalTitle}}</text>
+    </view>
+    <view class="flex_row">
+      <text class="mark">评分</text>
+      <template is="starsTemplate" data="{{stars:movie.stars,score:movie.score}}" />
+    </view>
+    <view class="flex_row">
+      <text class="mark">导演</text>
+      <text>{{movie.director.name}}</text>
+    </view>
+    <view class="flex_row">
+      <text class="mark">影人</text>
+      <text>{{movie.casts}}</text>
+    </view>
+    <view class="flex_row">
+      <text class="mark">类型</text>
+      <text>{{movie.generes}}</text>
+    </view>
+  </view>
+  <view class="hr"></view>
+  <view class="synopsis">
+    <text class="synopsis_font">剧情简介</text>
+    <text class="summary_content">{{movie.summary}}</text>
+  </view>
+  <view class="hr"></view>
+  <view class="cast">
+    <text class="cast_font">影人</text>
+    <scroll-view class="cast_imgs" scroll-x="true">
+      <block wx:for="{{movie.castsInfo}}" wx:for-item="item">
+        <view class="cast_container">
+          <image class="cast_img" src="{{item.img}}"></image>
+          <text class="cast_name">{{item.name}}</text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

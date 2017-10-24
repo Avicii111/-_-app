@@ -1,0 +1,33 @@
+
+<!--引入template模块-->
+<import src="index_item/index_item_template.wxml" />
+<view>
+  <swiper catchtap="onSwiperTap" indicator-dots="true" autoplay="true" interval="4000" circular="true" >
+
+    <!--vertical="true"-->
+    <swiper-item >
+      <image src="/images/banner/Carib.jpg"  data-postId="0"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/banner/ME_3.jpg"  data-postId="1"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/banner/furious_8.jpg"  data-postId="2"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/banner/NAVI.jpg"  data-postId="3"></image>
+    </swiper-item>
+  </swiper>
+
+  <block wx:for="{{index_key}}" wx:for-item="item" wx:for-index="idx">
+
+    <!--template-->
+
+    <!--...数据绑定，相当于展开平铺JS里的子对象，调用子元素，不用加item.了-->
+
+    <!--自定义函数 data- + 自定义名称 (还可以再若干- + 自定义名称)-->
+    <view catchtap="onPostTap" data-postId="{{item.postId}}">
+      <template is="postItem" data="{{...item}}" />
+    </view>
+  </block>
+</view>

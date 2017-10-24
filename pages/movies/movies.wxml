@@ -1,0 +1,24 @@
+<import src="movies_list/movies_list_template.wxml" />
+<import src="movie_grib/movie_grib_template.wxml" />
+<view class="search">
+  <icon type="search" class="search_img" size="13" color="405f80">
+  </icon>
+  <input type="text" placeholder="你的名字" placeholder-class="placeholder" bindfocus="onBindFoucs" bindconfirm="onBindChange" />
+  <image src="/images/icon/xx.png" class="xx_img" wx:if="{{searchPannelShow}}"bindtap="onCannelTap"></image>
+</view>
+<view class="container" wx:if="{{containerShow}}">
+  <view class="movie_temp">
+  <!--直接对template用class进行控制是不行的，因为template只是个占位符,要解决需要将其放在view里面-->
+    <template is="moviesListTemplate" data="{{...in_Theaters}}" />
+  </view>
+  <view class="movie_temp">
+    <template is="moviesListTemplate" data="{{...coming_Soon}}" />
+  </view>
+  <view class="movie_temp">
+    <template is="moviesListTemplate" data="{{...top250}}" />
+  </view>
+</view>
+
+<view class="search_pannel" wx:if="{{searchPannelShow}}">
+  <template is="movieGribTemplate" data="{{...searchResult}}" />
+</view>

@@ -1,0 +1,25 @@
+
+<!--pages/movies/movies_list/movies_list.wxml-->
+<import src="../movies_template/movies_template.wxml" />
+<template name="moviesListTemplate">
+  <view class="movies_list_container">
+    <view class="inner_container">
+      <view class="movies_head">
+        <text class="slogan">{{categoryTitle}}</text>
+        <view catchtap="onMoreTap" class="more" 
+        data-category="{{categoryTitle}}">
+          <text class="more_text">更多</text>
+          <image class="more_img" src="/images/icon/arrow-right.png"></image>
+        </view>
+      </view>
+      <view class="movie_container">
+        <block wx:for="{{movies}}" wx:for-item="movie">
+          <template is="moviesTemplate" data="{{...movie}}" />
+        </block>
+
+        <!--<template is="moviesTemplate" />
+        <template is="moviesTemplate" />-->
+      </view>
+    </view>
+  </view>
+</template>

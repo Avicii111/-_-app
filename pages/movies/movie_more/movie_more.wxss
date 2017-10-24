@@ -1,0 +1,2 @@
+/* pages/movies/movie_more/movie_more.wxss */
+@import "../movie_grib/movie_grib_template.wxss";

@@ -1,0 +1,2 @@
+<import src="../movie_grib/movie_grib_template.wxml" />
+<template is="movieGribTemplate" data="{{movies}}" />

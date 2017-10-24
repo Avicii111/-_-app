@@ -1,0 +1,21 @@
+<template name="postItem">
+  <view class="banner-container">
+    <view class="banner-author-date">
+
+      <!--item是子元素,localDatabase的子元素-->
+      <image class="banner-author" src="{{avatar}}"></image>
+      <text class="banner-date">{{date}} {{index}}</text>
+    </view>
+    <text class="banner-title">{{title}}</text>
+    <image class="banner-image" src="{{imgSrc}}"></image>
+    <text class="banner-content">
+      {{content}}
+    </text>
+    <view class="banner-like">
+      <image class="banner-like-image" src="/images/icon/chat.png"></image>
+      <text class="banner-like-font">{{collection}}</text>
+      <image class="banner-like-image" src="/images/icon/view.png"></image>
+      <text class="banner-like-font">{{reading}}</text>
+    </view>
+  </view>
+</template>

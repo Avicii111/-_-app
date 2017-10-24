@@ -1,0 +1,12 @@
+/* pages/movies/movie_grib/movie_grib.wxss */
+@import "../movies_template/movies_template.wxss";
+
+.single_view_container{
+    float: left;
+    margin-bottom: 40rpx;
+}
+
+.grib_container{
+    height: 1300rpx;
+    margin: 40rpx 0 40rpx 6rpx; 
+}
